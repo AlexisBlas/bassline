@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #16171a;
+  --surface: #1e2024;
+  --surface-raised: #26292e;
+  --line: #34383f;
+  --string: #6b6f78;
+  --fg: #ece9e2;
+  --muted: #9a9ca3;
+  --faint: #5f636b;
+  --accent: #f5a524;
+  --accent-ink: #1a1306;
+  --connect: #2dd4bf;
+  --connect-ink: #04201c;
+  --danger: #f87171;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-string: var(--string);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-connect: var(--connect);
+  --color-connect-ink: var(--connect-ink);
+  --color-danger: var(--danger);
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility glow-accent {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--accent) 60%, transparent),
+    0 0 14px color-mix(in oklab, var(--accent) 70%, transparent);
+}
+
+@utility glow-playing {
+  box-shadow:
+    0 0 0 2px var(--fg),
+    0 0 22px 4px color-mix(in oklab, var(--accent) 85%, transparent);
+}
+
+@utility glow-connect {
+  box-shadow: 0 0 12px color-mix(in oklab, var(--connect) 60%, transparent);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 40%, transparent);
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
